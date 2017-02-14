@@ -4,14 +4,14 @@
  *
  * @package   Alpha\Functions
  * @author    WP Site Care
- * @copyright Copyright (c) 2016, WP Site Care, LLC
- * @since     0.1.0
+ * @copyright Copyright (c) 2017, WP Site Care, LLC
+ * @since     1.0.0
  */
 
 /**
  * Set the content width and allow it to be filtered directly.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -22,7 +22,7 @@ function alpha_content_width() {
 /**
  * Return the parent theme's textdomain to avoid getting it from the file system.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return string
  */
@@ -33,18 +33,19 @@ function alpha_get_parent_textdomain() {
 /**
  * Set up theme defaults and add support for WordPress and CareLib features.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
 function alpha_setup() {
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'woocommerce' );
 }
 
 /**
  * Register custom image sizes for the theme.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -52,13 +53,12 @@ function alpha_register_image_sizes() {
 	set_post_thumbnail_size( 175, 130, true );
 	add_image_size( 'alpha-featured',      1025, 600, true );
 	add_image_size( 'alpha-featured-small', 513, 300, true );
-	add_image_size( 'alpha-related-posts',  350, 250, true );
 }
 
 /**
  * Register custom nav menus for the theme.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -72,7 +72,7 @@ function alpha_register_nav_menus() {
 /**
  * Register our theme's custom layout options.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -110,7 +110,7 @@ function alpha_register_layouts() {
 /**
  * Set the default layout for the theme.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */
@@ -121,7 +121,7 @@ function alpha_set_default_layout() {
 /**
  * Registers sidebars.
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @access public
  * @return void
  */

@@ -4,20 +4,20 @@
  *
  * @package   Alpha\CoreTemplates
  * @author    WP Site Care
- * @copyright Copyright (c) 2016, WP Site Care, LLC
- * @since     0.1.0
+ * @copyright Copyright (c) 2017, WP Site Care, LLC
+ * @since     1.0.0
  */
 ?>
 <!DOCTYPE html>
-<?php tha_html_before(); ?>
+<?php carelib_html_before(); ?>
 <html <?php language_attributes( 'html' ); ?>>
 
 <head>
-<?php tha_head_top(); ?>
+<?php carelib_head_top(); ?>
 <?php wp_head(); ?>
-<?php tha_head_bottom(); ?>
+<?php carelib_head_bottom(); ?>
 </head>
 
-<body <?php alpha_attr( 'body' ); ?>>
+<body <?php carelib_attr( 'body' ); ?>>
 
-	<?php tha_body_top(); ?>
+	<?php carelib_body_top(); ?>

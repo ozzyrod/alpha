@@ -2,8 +2,8 @@
   "name": "alpha",
   "capitalname": "Alpha",
   "textdomain": "alpha",
-  "version": "1.0.0",
-  "copyright": "2016",
+  "version": "0.1.0",
+  "copyright": "2017",
   "license": "GPL-2.0+",
   "private": true,
   "bugs": {
@@ -15,17 +15,12 @@
       "url": "https://www.wpsitecare.com"
     }
   ],
-  "pot": {
-    "reportmsgidbugsto": "WP Site Care <translations@wpsitecare.com>",
-    "lasttranslator": "WP Site Care <translations@wpsitecare.com>",
-    "languageteam": "WP Site Care <translations@wpsitecare.com>"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/wpsitecare/alpha.git"
   },
   "devDependencies": {
-    "sitecare-theme-config": "wpsitecare/sitecare-theme-config",
+    "sitecare-theme-config": "wpsitecare/sitecare-theme-config#3.1.0",
     "load-project-config": "~0.2.0"
   }
 }

@@ -1,28 +1,21 @@
-/* global skipLinkFocus */
 /**
  * JavaScript for Alpha
  *
  * Includes all JS which is required within all sections of the theme.
  */
-(function( window, $, undefined ) {
+function AlphaParentTheme( $ ) {
 	'use strict';
 
-	var $document = $( document ),
-		$body     = $( document.body );
+	var $body = $( document.body );
 
-	$body.addClass( 'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch' );
+	this.detectTouch = function() {
+		$body.addClass( 'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch' );
+	};
 
-	// Global script initialization
-	function globalInit() {
-		var $siteInner = $( '#site-inner' );
-		$document.gamajoAccessibleMenu();
-		$( '#menu-primary' ).alphaMobileMenu();
+	this.init = function() {
+		var $siteInner = $( document.getElementById( 'site-inner' ) );
+
+		$( document ).gamajoAccessibleMenu();
 		$siteInner.fitVids();
-	}
-
-	// Document ready.
-	$document.ready(function() {
-		skipLinkFocus.init();
-		globalInit();
-	});
-})( this, jQuery );
+	};
+}

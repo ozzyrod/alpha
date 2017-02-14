@@ -4,22 +4,22 @@
  *
  * @package   Alpha\TemplateParts
  * @author    WP Site Care
- * @copyright Copyright (c) 2016, WP Site Care, LLC
- * @since     0.1.0
+ * @copyright Copyright (c) 2017, WP Site Care, LLC
+ * @since     1.0.0
  */
 ?>
-<?php tha_header_before(); ?>
+<?php carelib_header_before(); ?>
 
-<header <?php alpha_attr( 'site-header' ); ?>>
+<header <?php carelib_attr( 'site-header' ); ?>>
 
-	<div <?php alpha_attr( 'wrap', 'header' ); ?>>
+	<div <?php carelib_attr( 'wrap', 'header' ); ?>>
 
-		<?php tha_header_top(); ?>
+		<?php carelib_header_top(); ?>
 
-		<?php tha_header_bottom(); ?>
+		<?php carelib_header_bottom(); ?>
 
 	</div><!-- .wrap -->
 
 </header><!-- #header -->
 
-<?php tha_header_after(); ?>
+<?php carelib_header_after(); ?>

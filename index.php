@@ -10,8 +10,8 @@
  *
  * @package   Alpha\CoreTemplates
  * @author    WP Site Care
- * @copyright Copyright (c) 2016, WP Site Care, LLC
+ * @copyright Copyright (c) 2017, WP Site Care, LLC
  * @see       /includes/vendor/carelib/inc/template-global.php
  * @uses      carelib_framework()
- * @since     0.1.0
+ * @since     1.0.0
  */

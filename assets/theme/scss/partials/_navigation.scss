@@ -108,24 +108,30 @@
 /* Responsive Menu
 --------------------------------------------- */
 
+%stop-scroll {
+	height: 100%;
+	overflow-y: hidden;
+}
+
 body {
 	left: 0;
 	position: relative;
 	transition: left $responsive-menu-transition;
+}
 
-	&.menu-open {
+.menu-open {
+	@extend %stop-scroll;
+
+	body {
+		@extend %stop-scroll;
 		left: -260px;
 	}
 }
 
-.menu-toggle {
-	background: $menu-toggle-bg-color;
-	border-radius: $base-border-radius;
-	color: $menu-toggle-link-color;
+%toggle-button-base {
 	cursor: pointer;
 	display: block;
 	margin: 0 0 0 auto;
-	padding: 0;
 
 	@include min-screen( $medium-screen ) {
 		display: none;
@@ -134,17 +140,52 @@ body {
 	&:hover,
 	&:focus,
 	&:active {
-		background: $menu-toggle-bg-color-hover;
-		color: $menu-toggle-color-hover;
 		outline: none;
 
 		@include min-screen( $medium-screen ) {
 			display: none;
 		}
 	}
+}
+
+.menu-toggle {
+	@extend %toggle-button-base;
+	background: $menu-toggle-bg-color;
+	color: $menu-toggle-link-color;
+	padding: 0;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $menu-toggle-bg-color-hover;
+		color: $menu-toggle-color-hover;
+	}
 
 	&::before {
-		font-size: $menu-toggle-font-size;
+		font-size: 35px;
+	}
+}
+
+.sub-menu-toggle {
+	@extend %toggle-button-base;
+	background: transparent;
+	bottom: 0;
+	color: $menu-mobile-color;
+	margin: 0;
+	padding: 0 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	&:focus,
+	&:hover,
+	&:active {
+		background: transparent;
+		color: $menu-mobile-color-hover;
+	}
+
+	&::before {
+		font-size: 30px;
 	}
 }
 
@@ -152,7 +193,7 @@ body {
 	background: $menu-mobile-bg-color;
 	bottom: 0;
 	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
 	position: fixed;
 	right: -260px;
 	top: 0;
@@ -180,12 +221,21 @@ body {
 		li a {
 			color: $menu-mobile-color;
 			padding: $menu-mobile-item-padding;
+			position: relative;
 		}
 
 		li a:hover,
 		li a:focus {
 			background: lighten( $menu-mobile-bg-color, 3 );
 			color: $menu-mobile-color-hover;
+		}
+	}
+
+	.sub-menu {
+		display: none;
+
+		&.activated {
+			display: block;
 		}
 	}
 

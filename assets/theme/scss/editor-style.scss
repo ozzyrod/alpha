@@ -1,8 +1,8 @@
 // Load Susy
-@import "../../bower/scss/susy/susy";
+@import "vendor/susy/susy";
 
 // Load Media Queries Mixins
-@import "../../bower/scss/media-queries";
+@import "vendor/media-queries";
 
 // Load Theme Mixins
 @import "mixins/global";
@@ -36,10 +36,6 @@ SiteCare Styles
 
 
 body {
+	@include entry-content;
 	max-width: span( 9 of 12 );
 }
-
-/*
-Content Area
------------------------------------------------------------------------------ */
-@include entry-content();
