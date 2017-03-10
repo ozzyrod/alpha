@@ -49,10 +49,10 @@ function alpha_featured_image() {
 
 	carelib_image( apply_filters( 'alpha_featured_image',
 		array(
-			'size'         => 'alpha-featured',
-			'before'       => '<div class="featured-media image">',
-			'after'        => '</div>',
-			'link_to_post' => ! is_singular(),
+			'size'   => 'alpha-featured',
+			'before' => '<div class="featured-media image">',
+			'after'  => '</div>',
+			'link'   => ! is_singular(),
 		)
 	) );
 }
@@ -263,6 +263,19 @@ function alpha_entry_footer_close() {
  */
 function alpha_entry_close() {
 	echo '</article><!-- .entry -->';
+}
+
+/**
+ * Load a template for an author box on singular entries.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function alpha_author_box_singular() {
+	if ( is_singular( 'post' ) ) {
+		get_template_part( 'template-parts/content/author-box', 'singular' );
+	}
 }
 
 /**

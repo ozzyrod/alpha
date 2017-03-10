@@ -1,8 +1,31 @@
+/* Pagination
+--------------------------------------------- */
+
+.pagination,
+.page-links {
+	.prev {
+		@include icon-before( $ionicon-var-arrow-left-c, 0 );
+	}
+
+	.next {
+		@include icon-after( $ionicon-var-arrow-right-c, 0 );
+	}
+
+	.rtl & {
+		.prev {
+			@include icon-before( $ionicon-var-arrow-left-c, 0 );
+		}
+
+		.next {
+			@include icon-after( $ionicon-var-arrow-right-c, 0 );
+		}
+	}
+}
+
 /* Archive Pagination
 --------------------------------------------- */
 
 .pagination {
-	display: block;
 	margin-bottom: 20px;
 	text-align: center;
 
@@ -22,18 +45,16 @@
 	a {
 		color: $pagination-link-color;
 
-		&:hover,
-		&:focus {
+		@include hover {
 			background: $pagination-bg-color-hover;
 		}
 	}
 }
 
-/* Single Post Pagination
+/* Single Entry Pagination
 --------------------------------------------- */
 
 .page-links {
-	display: block;
 	margin: $base-margin 0;
 
 	span,
@@ -52,28 +73,37 @@
 	a {
 		background: $pagination-bg-color;
 
-		&:hover,
-		&:focus {
+		@include hover {
 			background: $pagination-bg-color-hover;
 			color: $pagination-link-color;
 		}
 	}
 }
 
-
-/* Page Links
+/* Next/Prev Links
 --------------------------------------------- */
+
 .nav-next a {
+	@include icon-after( $ionicon-var-arrow-right-c, 10px );
 
 	@include min-screen( $medium-screen ) {
 		float: right;
 	}
+
+	.rtl & {
+		@include icon-before( $ionicon-var-arrow-right-c, 10px );
+	}
 }
 
 .nav-previous a {
+	@include icon-before( $ionicon-var-arrow-left-c, 10px );
 
 	@include min-screen( $medium-screen ) {
 		float: left;
+	}
+
+	.rtl & {
+		@include icon-after( $ionicon-var-arrow-left-c, 10px );
 	}
 }
 
@@ -86,17 +116,14 @@
 	margin: 0 0 10px;
 	padding: 16px 20px 14px;
 	text-align: center;
+
+	@include hover {
+		background: $pagination-bg-color-hover;
+		color: $pagination-link-color;
+	}
 }
 
-.nav-next a:hover,
-.nav-previous a:hover,
-.nav-next a:focus,
-.nav-previous a:focus {
-	background: $pagination-bg-color-hover;
-	color: $pagination-link-color;
-}
-
-/* Archive Page Links
+/* Archive Next/Prev Links
 --------------------------------------------- */
 
 .nav-archive {
@@ -110,7 +137,7 @@
 	text-transform: uppercase;
 }
 
-/* Single Entry Page Links
+/* Single Entry Next/Prev Links
 --------------------------------------------- */
 
 .nav-single {

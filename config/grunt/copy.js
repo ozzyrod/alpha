@@ -5,9 +5,9 @@ module.exports = {
 			{
 				expand: true,
 				flatten: true,
-				cwd: '<%= paths.bower%>',
+				cwd: '<%= paths.node%>',
 				src: [
-					'normalize-css/normalize.css',
+					'normalize.css/normalize.css',
 					'sass-mediaqueries/_media-queries.scss'
 				],
 				dest: '<%= paths.cssSrc%>vendor/'
@@ -15,12 +15,22 @@ module.exports = {
 			{
 				expand: true,
 				flatten: false,
-				cwd: '<%= paths.bower%>susy/sass/',
+				cwd: '<%= paths.node%>susy/sass/',
 				src: [
 					'*.scss',
 					'**/*.scss'
 				],
 				dest: '<%= paths.cssSrc%>vendor/susy/'
+			},
+			{
+				expand: true,
+				flatten: false,
+				cwd: '<%= paths.node%>ionicons/scss',
+				src: [
+					'*.scss',
+					'**/*.scss'
+				],
+				dest: '<%= paths.cssSrc%>vendor/ionicons/'
 			}
 		]
 	},
@@ -29,10 +39,10 @@ module.exports = {
 			{
 				expand: true,
 				flatten: true,
-				cwd: '<%= paths.bower%>',
+				cwd: '<%= paths.node%>',
 				src: [
 					'skip-link-focus/skip-link-focus.js',
-					'fitvids/jquery.fitvids.js',
+					'vanilla-fitvids/jquery.fitvids.js',
 					'accessible-menu/dist/jquery.accessible-menu.js'
 				],
 				dest: '<%= paths.jsSrc%>vendor/theme/'
@@ -52,10 +62,9 @@ module.exports = {
 			{
 				expand: true,
 				flatten: true,
-				cwd: '<%= paths.bower%>',
+				cwd: '<%= paths.node%>',
 				src: [
-					'themicons/dist/fonts/*',
-					'!themicons/dist/fonts/*.html'
+					'ionicons/fonts/*'
 				],
 				dest: '<%= paths.fonts %>'
 			}
@@ -68,12 +77,6 @@ module.exports = {
 				cwd: '<%= paths.composer %>wpsitecare/carelib',
 				src: ['**/*'],
 				dest: 'includes/vendor/carelib'
-			},
-			{
-				expand: true,
-				cwd: '<%= paths.composer %>zamoose/themehookalliance',
-				src: ['tha-theme-hooks.php'],
-				dest: 'includes/vendor/'
 			}
 		]
 	},

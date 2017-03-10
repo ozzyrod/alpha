@@ -1,3 +1,19 @@
+/* Archives
+--------------------------------------------- */
+
+.archive-title {
+	@include h1-font-size();
+	font-weight: 600;
+}
+
+.archive-description {
+	margin-bottom: $base-margin;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
 /* Entries
 --------------------------------------------- */
 
@@ -62,7 +78,15 @@
 	}
 
 	a {
-		@include alt-link-color();
+		@include alt-link-color;
+	}
+
+	&.categories .entry-terms {
+		@include icon-before( $ionicon-var-folder );
+	}
+
+	&.tags .entry-terms {
+		@include icon-before( $ionicon-var-pricetags );
 	}
 }
 
@@ -117,4 +141,68 @@
 		display: block;
 		margin: 0 auto;
 	}
+}
+
+/* Author Box
+--------------------------------------------- */
+.author-box {
+	@include clearfix;
+	margin-bottom: $base-margin;
+
+	.avatar-wrap {
+		@include min-screen( $medium-screen ) {
+			@include span( 2 of 12 );
+		}
+	}
+
+	.avatar {
+		border-radius: $base-border-radius;
+		margin: 0 auto;
+	}
+
+	.author-info {
+		@include min-screen( $medium-screen ) {
+			@include span( last 10 of 12 );
+		}
+
+		p:last-of-type {
+			margin-bottom: 10px;
+		}
+	}
+
+	.social-icons {
+		li {
+			display: inline-block;
+			font-size: 14px;
+			letter-spacing: 2px;
+			margin-right: 20px;
+			text-transform: uppercase;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
+		a {
+			@include alt-link-color;
+			display: block;
+			padding: 5px 0;
+		}
+	}
+}
+
+.social-icon-facebook span {
+	@include icon-before( $ionicon-var-social-facebook );
+}
+
+.social-icon-twitter span {
+	@include icon-before( $ionicon-var-social-twitter );
+}
+
+.social-icon-gplus span {
+	@include icon-before( $ionicon-var-social-googleplus );
+}
+
+.social-icon-rss span {
+	@include icon-before( $ionicon-var-social-rss );
 }
